@@ -31,5 +31,9 @@ app.whenReady().then(()=>{
         return await db.updateBudget(data);
     });
 
+    ipcMain.handle("get-budget", async () => {
+        return await db.getBudget();
+    })
+
     createWindow();
 });

@@ -1,5 +1,7 @@
 import { prisma } from "../prisma/client.ts";
 
+const ID = 10;
+
 interface Budget {
     id?: number;
     salary: number;
@@ -10,6 +12,16 @@ interface Budget {
     relationshipSavings: number;
 }
 
+async function getBudget(){
+    const data = await prisma.budget.findFirst({
+        where: {
+            id: ID,
+        },
+    });
+
+    return data;
+}
+
 async function updateBudget(data: Budget) {
     if (!data.id) {
         throw new Error("Entry ID is required");
@@ -17,7 +29,7 @@ async function updateBudget(data: Budget) {
 
     return await prisma.budget.update({
         where: {
-            id: 10,
+            id: ID,
         },
 
         data: {
@@ -32,5 +44,6 @@ async function updateBudget(data: Budget) {
 }
 
 export default {
+    getBudget,
     updateBudget,
 };
