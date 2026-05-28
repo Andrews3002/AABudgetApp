@@ -1,6 +1,7 @@
 import { app, BrowserWindow, ipcMain } from "electron";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+// import db from "./databaseHandler.ts"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -25,5 +26,10 @@ const createWindow = () => {
 
 app.whenReady().then(()=>{
     ipcMain.handle("ping", () => "pong");
+
+    ipcMain.handle("update-budget", async (_, data) => {
+        return await db.updateBudget(data);
+    });
+
     createWindow();
 });

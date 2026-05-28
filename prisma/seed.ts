@@ -1,14 +1,4 @@
-import { prisma } from "./client";
-
-interface Budget {
-    id?: number;
-    salary: number;
-    savings: number;
-    offering: number;
-    utilities: number;
-    relationship: number;
-    relationshipSavings: number;
-}
+import { prisma } from "../prisma/client.ts";
 
 async function main() {
     await prisma.budget.create({
@@ -24,7 +14,7 @@ async function main() {
 
     const data = await prisma.budget.findFirst({
         where: {
-            id: 6
+            id: 10
         }
     });
     console.log("salary = ",data);

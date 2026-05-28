@@ -7,5 +7,6 @@ contextBridge.exposeInMainWorld("versions", {
 });
 
 contextBridge.exposeInMainWorld("api", {
-    ping: () => ipcRenderer.invoke("ping")
+    ping: () => ipcRenderer.invoke("ping"),
+    updateBudget: (data) => ipcRenderer.invoke("update-budget", data),
 });
