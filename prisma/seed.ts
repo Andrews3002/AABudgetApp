@@ -11,7 +11,7 @@ interface Budget {
 }
 
 async function main() {
-    const budget = await prisma.budget.create({
+    await prisma.budget.create({
         data: {
             salary: 1200.00,
             savings: 0.2,
@@ -21,19 +21,13 @@ async function main() {
             relationshipSavings: 0.2,
         }
     });
-    console.log("Created budget:", budget);
 
     const data = await prisma.budget.findFirst({
         where: {
-            id: 1
+            id: 6
         }
     });
-    console.log("salary = ",data?.salary);
-    console.log("savings = ",data?.savings * data?.salary);
-    console.log("utilities = ",data?.utilities * data?.salary);
-    console.log("relationship = ",data?.relationship * data?.salary);
-    console.log("relationshipSavings = ",data?.relationshipSavings * data?.salary);
-    console.log("offering = ",data?.offering * data?.salary);
+    console.log("salary = ",data);
 }
 
 main()

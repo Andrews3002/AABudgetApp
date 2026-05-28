@@ -1,0 +1,7 @@
+-- AlterTable
+ALTER TABLE "Budget" ALTER COLUMN "salary" SET DEFAULT 1200.00,
+ALTER COLUMN "savings" SET DEFAULT 0.2,
+ALTER COLUMN "offering" SET DEFAULT 0.2,
+ALTER COLUMN "utilities" SET DEFAULT 0.2,
+ALTER COLUMN "relationship" SET DEFAULT 0.2,
+ALTER COLUMN "relationshipSavings" SET DEFAULT 0.2;
