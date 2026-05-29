@@ -1,6 +1,6 @@
 import { prisma } from "../prisma/client.ts";
 
-const ID = 10;
+const ID = 1;
 
 interface Budget {
     id?: number;
