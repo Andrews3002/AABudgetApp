@@ -14,13 +14,13 @@ interface Budget {
 
 interface SavingAllocation {
     id?: number;
-    emergency: number,
-    safe: number,
-    risky: number,
-    wants: number,
+    emergency: number;
+    safe: number;
+    risky: number;
+    wants: number;
 }
 
-async function getBudget(){
+async function getBudget() {
     const data = await prisma.budget.findFirst({
         where: {
             id: ID,
@@ -66,7 +66,7 @@ async function updateSavingAllocation(data: SavingAllocation) {
         throw new Error("Entry ID is required");
     }
 
-    return await prisma.budget.update({
+    return await prisma.savingAllocation.update({
         where: {
             id: ID,
         },

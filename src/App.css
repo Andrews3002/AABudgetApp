@@ -53,6 +53,38 @@
     font-size: 1.05rem;
 }
 
+.page-switcher {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.page-button {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.12);
+    color: #f4ffee;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background 0.2s,
+        border-color 0.2s,
+        transform 0.2s;
+}
+
+.page-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.page-button.active {
+    background: #ffffff;
+    color: #0d3317;
+    border-color: rgba(43, 105, 48, 0.6);
+    transform: translateY(-1px);
+}
+
 .hero-stats {
     display: grid;
     gap: 18px;
@@ -255,6 +287,20 @@
     cursor: not-allowed;
 }
 
+.savings-amount-box {
+    width: 90%;
+    min-height: 52px;
+    padding: 0 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(56, 118, 63, 0.18);
+    background: rgba(244, 250, 244, 0.96);
+    color: #0f3819;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
 .budget-preview .preview-header {
     display: flex;
     align-items: center;
@@ -284,7 +330,7 @@
     color: #0f3819;
 }
 
-.preview-row-title{
+.preview-row-title {
     color: #000000;
 }
 
