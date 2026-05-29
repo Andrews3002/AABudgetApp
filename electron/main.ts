@@ -18,7 +18,7 @@ const createWindow = () => {
     });
 
     //PROD
-    window.loadFile("index.html");
+    window.loadFile(path.join(__dirname, "../renderer-dist/index.html"));
 
     //DEV
     // window.loadURL("http://localhost:5173/");
