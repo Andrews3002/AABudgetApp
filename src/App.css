@@ -31,9 +31,10 @@
     margin-bottom: 16px;
     padding: 6px 14px;
     border-radius: 999px;
-    background: rgba(33, 122, 57, 0.14);
-    color: #0f5125;
+    background: rgb(71, 247, 2);
+    color: #000000;
     font-size: 14px;
+    font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -42,13 +43,13 @@
     margin: 0 0 12px;
     font-size: clamp(2.25rem, 3.2vw, 3.5rem);
     line-height: 1.02;
-    color: #083416;
+    color: #27ff6b;
 }
 
 .hero-copy p {
     margin: 0;
     max-width: 620px;
-    color: #264e2f;
+    color: #ffffff;
     font-size: 1.05rem;
 }
 
@@ -137,7 +138,7 @@
 }
 
 .form-row input {
-    width: 100%;
+    width: 90%;
     min-height: 52px;
     padding: 0 16px;
     border-radius: 16px;
@@ -281,6 +282,10 @@
 
 .preview-row strong {
     color: #0f3819;
+}
+
+.preview-row-title{
+    color: #000000;
 }
 
 .preview-footer {
