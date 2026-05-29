@@ -22,3 +22,8 @@ export * from './enums.js';
  * 
  */
 export type Budget = Prisma.BudgetModel
+/**
+ * Model SavingAllocation
+ * 
+ */
+export type SavingAllocation = Prisma.SavingAllocationModel

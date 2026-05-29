@@ -17,7 +17,7 @@
 
 import * as runtime from "@prisma/client/runtime/client"
 import type * as Prisma from "../models.js"
-import { type PrismaClient } from "./class.ts"
+import { type PrismaClient } from "./class.js"
 
 export type * from '../models.js'
 
@@ -384,7 +384,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  Budget: 'Budget'
+  Budget: 'Budget',
+  SavingAllocation: 'SavingAllocation'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -400,7 +401,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "budget"
+    modelProps: "budget" | "savingAllocation"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -478,6 +479,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    SavingAllocation: {
+      payload: Prisma.$SavingAllocationPayload<ExtArgs>
+      fields: Prisma.SavingAllocationFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.SavingAllocationFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SavingAllocationPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.SavingAllocationFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SavingAllocationPayload>
+        }
+        findFirst: {
+          args: Prisma.SavingAllocationFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SavingAllocationPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.SavingAllocationFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SavingAllocationPayload>
+        }
+        findMany: {
+          args: Prisma.SavingAllocationFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SavingAllocationPayload>[]
+        }
+        create: {
+          args: Prisma.SavingAllocationCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SavingAllocationPayload>
+        }
+        createMany: {
+          args: Prisma.SavingAllocationCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.SavingAllocationCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SavingAllocationPayload>[]
+        }
+        delete: {
+          args: Prisma.SavingAllocationDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SavingAllocationPayload>
+        }
+        update: {
+          args: Prisma.SavingAllocationUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SavingAllocationPayload>
+        }
+        deleteMany: {
+          args: Prisma.SavingAllocationDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.SavingAllocationUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.SavingAllocationUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SavingAllocationPayload>[]
+        }
+        upsert: {
+          args: Prisma.SavingAllocationUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SavingAllocationPayload>
+        }
+        aggregate: {
+          args: Prisma.SavingAllocationAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSavingAllocation>
+        }
+        groupBy: {
+          args: Prisma.SavingAllocationGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SavingAllocationGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.SavingAllocationCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SavingAllocationCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -528,6 +603,17 @@ export const BudgetScalarFieldEnum = {
 } as const
 
 export type BudgetScalarFieldEnum = (typeof BudgetScalarFieldEnum)[keyof typeof BudgetScalarFieldEnum]
+
+
+export const SavingAllocationScalarFieldEnum = {
+  id: 'id',
+  emergency: 'emergency',
+  safe: 'safe',
+  risky: 'risky',
+  wants: 'wants'
+} as const
+
+export type SavingAllocationScalarFieldEnum = (typeof SavingAllocationScalarFieldEnum)[keyof typeof SavingAllocationScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -682,6 +768,7 @@ export type PrismaClientOptions = ({
 }
 export type GlobalOmitConfig = {
   budget?: Prisma.BudgetOmit
+  savingAllocation?: Prisma.SavingAllocationOmit
 }
 
 /* Types for Logging */

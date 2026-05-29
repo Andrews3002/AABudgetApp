@@ -21,3 +21,11 @@ model Budget {
   relationship Float
   relationshipSavings Float
 }
+
+model SavingAllocation {
+  id Int @id @default(autoincrement())
+  emergency Float
+  safe Float
+  risky Float
+  wants Float
+}
