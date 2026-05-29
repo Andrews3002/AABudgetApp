@@ -298,7 +298,7 @@ function App() {
         <div className="app-shell">
             <section className="hero-panel">
                 <div className="hero-copy">
-                    <span className="eyebrow">Green budget lab</span>
+                    <span className="eyebrow">AA Budget App v1.0</span>
                     <h1>Plan your salary and savings allocations</h1>
                     <p>
                         Manage your budget, then allocate your calculated
