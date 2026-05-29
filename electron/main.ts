@@ -33,6 +33,14 @@ app.whenReady().then(()=>{
 
     ipcMain.handle("get-budget", async () => {
         return await db.getBudget();
+    });
+
+    ipcMain.handle("get-saving-allocation", async () => {
+        return await db.getSavingAllocation();
+    });
+
+    ipcMain.handle("update-saving-allocation", async (__, data) => {
+        return await db.updateSavingAllocation(data);
     })
 
     createWindow();

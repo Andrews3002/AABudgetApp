@@ -9,5 +9,7 @@ contextBridge.exposeInMainWorld("versions", {
 contextBridge.exposeInMainWorld("api", {
     ping: () => ipcRenderer.invoke("ping"),
     getBudget: () => ipcRenderer.invoke("get-budget"),
+    getSavingAllocation: () => ipcRenderer.invoke("get-saving-allocation"),
     updateBudget: (data) => ipcRenderer.invoke("update-budget", data),
+    updateSavingAllocation: (data) => ipcRenderer.invoke("update-saving-allocation", data),
 });

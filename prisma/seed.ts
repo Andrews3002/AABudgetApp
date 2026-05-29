@@ -3,25 +3,25 @@ import { prisma } from "../prisma/client.ts";
 const ID = 1;
 
 async function main() {
-    // await prisma.budget.create({
-    //     data: {
-    //         salary: 1200.00,
-    //         savings: 20,
-    //         offering: 20,
-    //         utilities: 20,
-    //         relationship: 20,
-    //         relationshipSavings: 20,
-    //     }
-    // });
+    await prisma.budget.create({
+        data: {
+            salary: 1200.00,
+            savings: 20,
+            offering: 20,
+            utilities: 20,
+            relationship: 20,
+            relationshipSavings: 20,
+        }
+    });
 
-    // await prisma.savingAllocation.create({
-    //     data: {
-    //         emergency: 25,
-    //         safe: 25,
-    //         risky: 25,
-    //         wants: 25,
-    //     }
-    // });
+    await prisma.savingAllocation.create({
+        data: {
+            emergency: 25,
+            safe: 25,
+            risky: 25,
+            wants: 25,
+        }
+    });
 
     const data = await prisma.budget.findFirst({
         where: {
