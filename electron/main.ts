@@ -18,10 +18,10 @@ const createWindow = () => {
     });
 
     //PROD
-    // window.loadFile("index.html");
+    window.loadFile("index.html");
 
     //DEV
-    window.loadURL("http://localhost:5173/");
+    // window.loadURL("http://localhost:5173/");
 }
 
 app.whenReady().then(()=>{
